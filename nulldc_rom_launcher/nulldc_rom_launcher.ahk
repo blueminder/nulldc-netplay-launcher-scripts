@@ -15,13 +15,15 @@ if rom is not space
     Run, "FPS_Limiter.exe"  /r:D3D9 /f:60 /x:OFF /l:OFF "%DistroRoot%\nulldc-1-0-4-en-win\nullDC_Win32_Release-NoTrace.exe", %DistroRoot%\FPS_Limiter_0.2_Remake_GUI
     WinWait, nullDC-Naomi v1.0.4 (built Jan  4 2011@23:39:56)
     Sleep, 1000
-    WinMove, nullDC ahk_class ndc_main_window,, X, Y
+	; apply window settings 
+    Sleep, 1000
+    WinMove, nullDC ahk_class ndc_main_window,,,
     WinMenuSelectItem, nullDC ahk_class ndc_main_window,,File,Normal Boot
-    WinWait, Open ahk_class #32770
-    WinWaitActive, Open ahk_class #32770
+    WinWait, ahk_class #32770
+    WinWaitActive, ahk_class #32770
 
-    ControlSetText, Edit1, %rom%, Open ahk_class #32770
-    ControlSend, Edit1, {Enter}, Open ahk_class #32770
+    ControlSetText, Edit1, %rom%, ahk_class #32770
+    ControlSend, Edit1, {Enter}, ahk_class #32770
 
     if is_host is space
         WinMinimize, ahk_class ConsoleWindowClass ahk_exe nullDC_Win32_Release-NoTrace.exe
