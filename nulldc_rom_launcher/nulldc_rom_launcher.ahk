@@ -12,7 +12,7 @@ rom = %1%
 is_host = %2%
 if rom is not space
 {
-    Run, "FPS_Limiter.exe"  /r:D3D9 /f:60 /x:OFF /l:OFF "%DistroRoot%\nulldc-1-0-4-en-win\nullDC_Win32_Release-NoTrace.exe", %DistroRoot%\FPS_Limiter_0.2_Remake_GUI
+    Run, "%DistroRoot%\nulldc-1-0-4-en-win\nullDC_Win32_Release-NoTrace.exe", %DistroRoot%
     WinWait, nullDC-Naomi v1.0.4 (built Jan  4 2011@23:39:56)
     Sleep, 1000
 	; apply window settings 
